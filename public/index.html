@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>
+		Ejercicio
+	</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="style.css">
+
+	</head>
+	<body>
+
+
+	
+	
+		<div id="main" class="container">
+		<style>
+		#main
+		{
+			margin-top: 200px;
+		}
+		</style>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">My Notes</h1>
+            <div class="account-wall">
+	
+                
+                <input id="txtEmail" type="text" class="form-control" placeholder="Email" >
+
+                <input id="txtPassword" type="password" class="form-control" placeholder="Password" required>
+                <br>
+                <div class="btn-group-vertical-justified">
+
+                <button id="emailLogin" class="btn btn-lg btn-primary btn-block" type="submit" onclick="signIn()">
+                    Sign in</button>
+               
+                    </div>
+                
+
+            </div>
+            <button class="btn btn-link" onclick="signUp()">Sign up </button>
+        </div>
+    </div>
+</div>
+
+	<!-- Firebase initialization -->
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+		<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBKMUojUWolCDTK6zYbsJXHWqtt-No9138",
+	    authDomain: "tabla-fd081.firebaseapp.com",
+	    databaseURL: "https://tabla-fd081.firebaseio.com",
+	    projectId: "tabla-fd081",
+	    storageBucket: "",
+	    messagingSenderId: "749186694386"
+	  	};
+	  	firebase.initializeApp(config);
+	</script>
+
+	<!-- Jquery CDN -->
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+	  <!-- Latest compiled and minified JavaScript // bootstrap -->
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	 	<script src="app.js"></script>
+
+	</body>
+
+</html>

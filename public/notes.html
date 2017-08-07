@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+
+	
+	<div class = "page-header container"><h3>Notes </h3> 	<button id ="btnLogout" class = "btn btn-info" onclick = "logOut()">Log out</button>
+</div>
+	<div id="todo" class="container">
+	<div id="divNotas" class="container">
+		<table id="notas" class="table table-striped table-bordered tabler-hover">
+		
+
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+
+		</table>
+	</div>
+
+	<div id= "Log out" class = "container">
+
+
+
+
+	</div>
+	<br>
+
+	<div class="container">
+	<button id="btnSubmit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add note</button>
+	</div>
+
+	<div id="addNote" class="container">
+
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">New note</h4>
+        </div>
+        <div class="modal-body">
+          <input id="txtNoteName" type = "name" placeholder="Note name" class="cold-md-9">
+        </div>
+        <div class="modal-body">
+          <input id="txtNoteDescription" type = "description" placeholder="Note Description" class="cold-md-9">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="createNote2();" data-dismiss="modal">Create note</button>
+
+        </div>
+      </div>
+
+	</div>
+	</div>
+
+
+	
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+	  <!-- Latest compiled and minified JavaScript // bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Firebase initialization -->
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+		<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBKMUojUWolCDTK6zYbsJXHWqtt-No9138",
+	    authDomain: "tabla-fd081.firebaseapp.com",
+	    databaseURL: "https://tabla-fd081.firebaseio.com",
+	    projectId: "tabla-fd081",
+	    storageBucket: "",
+	    messagingSenderId: "749186694386"
+	  	};
+	  	firebase.initializeApp(config);
+	</script>
+
+	<!-- Jquery CDN -->
+
+		<script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous"></script>
+
+<script src = "app.js"></script>
+	
+	<script>
+	firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  drawNotes();
+  } else {
+  }
+});
+	</script>
+	
+
+</body>
+
+</html>
