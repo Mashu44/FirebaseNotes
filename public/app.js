@@ -64,18 +64,7 @@ function signIn()
 	
 	
 }
-//function logInState()
-//{
-//
-//	firebase.auth().onAuthStateChanged(function(user) {
-  //      if (user) {
-    //    	window.location.href ="notes.html";
-      //  } 
-        //else 
-        //{
-        //}
-    //});
-//}
+
 
 function logOut()
 {
@@ -85,26 +74,6 @@ function logOut()
 	})
 
 }
-
-function signInGoogle()
-{
-	var provider = new firebase.auth.GoogleAuthProvider();
-
-	firebase.auth().signInWithPopup(provider).then(function(result) {
-  var token = result.credential.accessToken;
-  var user = result.user;
-}).catch(function(error) {
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  var email = error.email;
-  var credential = error.credential;
-  // ...
-  console.log(error);
-});
-}
-
-
-
 
 function createNote2()
 {
@@ -158,13 +127,3 @@ function drawNotes()
 
 
 
-//function drawNotes()
-//{
-
-//	var userId = firebase.auth().currentUser.uid;
-//for userId in firebase.database().ref('/users/' + userId + '/' + 'notes/').once('value').then(function(snapshot) {
- 
-
-  
-//});
-//}
